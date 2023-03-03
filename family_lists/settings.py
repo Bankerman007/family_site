@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-sdo!k15f3ia&%2%uqw312f$$lwg407o6w4wpm_b8-1ifzrb7xh
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False
-DEBUG = os.environ['DEBUG']
+DEBUG = os.environ['DEBUG']=='FALSE'
 
 ALLOWED_HOSTS = ['wright.family.site.justdev.us']
 
