@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Issues</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.1/dist/full.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+      </head>
+    <body class="bg-cover min-h-screen bg-slate-500">
+      <div class = "flex flex-col">   
+            
+                
+        <h1 class= "text-3xl text-white font-bold underline ml-[15px] mt-2">
+            It's The Wrights!
+        </h1>
+    
+
+      </div>
+      <div class= "flex flex-wrap items-center space-x-5 ml-[10px] mr-[10px]">
+        <div class="card h-auto bg-base-100 shadow-xl mt-5 w-auto">
+          <div class="card-body flex mt-[-10px] overflow-auto">
+            <h2 class="card-title"><span class="text-orange-400">Events</span> This Week</h2>
+            <div class="divider"></div>
+            
+              <ul class="menu bg-base-100 mt-[1px] ml-[-3px] mb-48">
+              
+                {% for p in items %}
+                <li class="list-group-item">{{p.item}}</li>
+                {% endfor %} 
+              </ul>
+                
+              </ul>
+            
+          </div>
+          
+        </div>   
+        
+        <div class="card h-auto bg-base-100 shadow-xl mt-5 w-auto">
+          <div class="card-body flex mt-[-10px] overflow-auto">
+            <h2 class="card-title"><span class="text-orange-400">Issues</span> This Week</h2>
+            <div class="divider"></div>
+            
+            <ul class="menu bg-base-100 mt-[1px] ml-[-3px] mb-48">
+              
+              {% for p in issues_week %}
+              <li class="list-group-item">{{p.item}}</li>
+              {% endfor %} 
+            </ul>
+            
+          </div>
+          
+        </div> 
+        <div class="card h-auto bg-base-100 shadow-xl mt-5 w-auto">
+          <div class="card-body flex mt-[-10px] overflow-auto">
+            <h2 class="card-title"><span class="text-orange-400">Needs</span> This Week</h2>
+            <div class="divider"></div>
+            
+            <ul class="menu bg-base-100 mt-[1px] ml-[-3px] mb-48">
+              
+              {% for p in needs_week %}
+              <li class="list-group-item">{{p.item}}</li>
+              {% endfor %} 
+            </ul>
+            
+          </div>
+          
+        </div>
+        <div class="card h-auto bg-base-100 shadow-xl mt-5 w-auto">
+          <div class="card-body flex mt-[-10px] overflow-auto">
+            <h2 class="card-title"><span class="text-orange-400">repairs</span> This Week</h2>
+            <div class="divider"></div>
+            <ul class="menu bg-base-100 mt-[1px] ml-[-3px] mb-48">
+              
+              {% for p in repairs_week %}
+              <li class="list-group-item">{{p.item}}</li>
+              {% endfor %} 
+            </ul>
+            
+          </div>
+          
+        </div>  
+      </div>
+    </body>
+</html>
