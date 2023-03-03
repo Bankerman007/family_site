@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import os.path
 import psycopg2
 import dj_database_url
 
@@ -85,7 +86,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-DATABASES['default'] = os.environ['POSTGRES_FAMILY']
+#DATABASES['default']= os.environ(dj_database_url)
+
+DATABASES['default'] =dj_database_url.parse('postgres://yyzgczrw:vma4_jk0VOhkPVRdrTOJPXUGCk1Yz2QF@isilo.db.elephantsql.com/yyzgczrw')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -121,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+
 STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR,'family_lists_app/static')
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,'templates', 'static', 'staticfiles')),
