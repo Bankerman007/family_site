@@ -1,4 +1,4 @@
-from . models import Events
+# from . models import Events
 
-obj=Events.objects.all()
-print(obj)
+# obj=Events.objects.all()
+# print(obj)

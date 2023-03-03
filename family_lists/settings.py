@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-sdo!k15f3ia&%2%uqw312f$$lwg407o6w4wpm_b8-1ifzrb7xh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #DEBUG = os.environ['DEBUG']=='FALSE'
 
-ALLOWED_HOSTS = ['wright.family.site.justdev.us']
+ALLOWED_HOSTS = ['wright.family.site.justdev.us','127.0.0.1']
 
 
 # Application definition
@@ -88,7 +88,9 @@ DATABASES = {
 }
 #DATABASES['default']= os.environ(dj_database_url)
 
-DATABASES['default'] =dj_database_url.parse('postgres://yyzgczrw:vma4_jk0VOhkPVRdrTOJPXUGCk1Yz2QF@isilo.db.elephantsql.com/yyzgczrw')
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ['POSTGRES_FAMILY'])
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
