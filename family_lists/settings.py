@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-sdo!k15f3ia&%2%uqw312f$$lwg407o6w4wpm_b8-1ifzrb7xh
 DEBUG=False
 #DEBUG = os.environ['DEBUG']=='TRUE'
 
-ALLOWED_HOSTS = ['wright-family-site-justdev.us','127.0.0.1']
+ALLOWED_HOSTS = ['wright-family-site.justdev.us','127.0.0.1']
 
 
 # Application definition
